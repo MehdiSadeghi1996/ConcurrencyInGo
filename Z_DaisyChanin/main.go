@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func f(left, right chan int) {
 	left <- 2 + <-right
 }
 
 func main() {
+
 	const n = 10000
 	leftmost := make(chan int)
 	right := leftmost
